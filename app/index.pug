@@ -1,0 +1,27 @@
+extends ./templates/_skeleton.pug
+
+block header
+	nav.navbar.navbar-default.navbar-fixed-top
+		.container
+			.navbar-header
+				button.navbar-toggle.collapsed(data-togle='collapse' data-target='#navbar-classe_a')
+					span.icon-bar
+					span.icon-bar
+					span.icon-bar
+				a.navbar-brand(href='') Classe A
+
+			#navbar-classe_a.collapse.navbar-collapse
+				ul.nav.navbar-nav.navbar-right
+					li(name='home')
+						a(href='') Home
+					
+					li(name='about')
+						a(href='') Sobre
+					
+					li(name='produtos')
+						a(href='') Produtos
+					
+					li(name='contato')
+						a(href='') Contato
+block page
+	div(ng-view='')

@@ -1,0 +1,54 @@
+$main-color: #474496;
+
+$brand-primary: $main-color;
+
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/compass-sass-mixins/lib/compass";
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Courgette');
+
+@import "utils";
+
+.text-cursive {
+	font-family: 'Courgette', cursive;
+}
+
+.text-sans {
+	font-family: 'Open Sans', sans-serif;
+}
+
+nav.navbar {
+	height: 80px;
+	background-color: rgba(#000, .0);
+	border-radius: 0;
+	border: none;	
+
+	@include transition(background-color .5s);
+
+	&.navbar-opaque {
+		background-color: rgba(#000, .5);
+	}
+
+	.navbar-collapse {
+		ul.navbar-nav {
+			margin-top: 15px;
+			
+			li {
+				a {
+					font-family: 'Open Sans', sans-serif;
+					color: white;
+					font-size: 16px;
+				}
+
+				&.active {
+					a {
+						background-color: $main-color;
+						border-radius: 30px;
+					}					
+				}
+			}
+		}
+	}
+}
+
+@import "home";

@@ -1,0 +1,86 @@
+#carousel-home.carousel.slide(data-ride='carousel')
+	//- Indicators
+	ol.carousel-indicators
+		li(data-target='#carousel-home' data-slide-to='{{$index}}' ng-class='{"active": $index === 0}' ng-repeat='n in getNumber(3) track by $index')
+
+	//- Wrapper for Slides
+	.carousel-inner(role='listbox')
+		.item(ng-class='{"active": $index === 0}' ng-repeat='slide in home.slides track by $index')
+			.cover
+				h2 {{slide.title}}
+				p {{slide.subtitle}}
+			.picture(ng-style='{"background-image": "url(" + slide.imageUrl + ")"}')
+
+	//- Controls
+	a.left.carousel-control(data-target='#carousel-home' role='button' data-slide='prev')
+		span.glyphicon.glyphicon-chevron-left
+	a.right.carousel-control(data-target='#carousel-home' role='button' data-slide='next')
+		span.glyphicon.glyphicon-chevron-right
+
+.container
+	.row.offset-top-60
+		.col-xs-12
+			.h2.text-lg.text-cursive.text-center Quem somos
+			.separator
+			p.text-center.text-sans.text-sm.text-light Desenvolvemos com amor para ser usado com carinho
+	
+	.row.offset-top-60
+		.col-xs-12.col-sm-4.text-center
+			i.icon-lg.fa.fa-bank
+			h3.offset-top-30 Ideologia
+		
+		.col-xs-12.col-sm-4.text-center
+			i.icon-lg.fa.fa-eye
+			h3.offset-top-30 Foco			
+		
+		.col-xs-12.col-sm-4.text-center
+			i.icon-lg.fa.fa-cubes
+			h3.offset-top-30 Valores
+
+		.col-xs-12.offset-top-30.text-center
+			a.btn.btn-primary.btn-lg.btn-outline.offset-top-15(href='/sobre') Ver mais
+
+.parallax-container.offset-top-60
+	div(name='parallax' ng-parallax pattern="'images/parallax-bg.jpg'" speed='8' reverse='false')
+	.cover.text-center.text-white
+		i.icon-lg.fa.fa-users
+		h2.text-lg.offset-top-30 A Empresa
+		p.text-sans.text-md Trouxemos para o mercado produtos de alta qualidade. Pioneira em tecnologia.
+		.separator.separator-white.separator-lg
+		p.text-sans.text-sm Criada para atender a demanda por produtos de alta qualidade, economia, praticidade e absorção, as Toalhas Classe A surge no mercado como uma das melhores opções em custo benefício para seu clientes.
+
+.container.testimonials
+	.row.offset-top-60
+		.col-xs-12
+			.h2.text-lg.text-cursive.text-center Depoimentos
+			.separator
+			p.text-center.text-sans.text-sm.text-light O que nossos clientes dizem
+
+	.row.offset-top-60
+		.col-xs-12.col-sm-6.text-center
+			//- img.img.img-responsive.img-circle(src='http://www.drodd.com/images15/man4.png')
+			i.icon-lg.fa.fa-quote-right
+			p.text-light.text-sm.offset-top-30 Somos uma empresa jovem e moderna que trabalha com a distribuição de nossos produtos na região serrana do Rio de Janeiro, com atentimento rápido e eficaz, conquistando dia-a-dia a confiança de seus distribuidores. Nossa característica é desenvolver produtos singulares e de alta qualidade e com um custo benefício que cabe no seu bolso.
+			h3.text-sans Cesar Lagreca
+			p.text-sans.text-sm Diretor Comercial
+
+		.col-xs-12.col-sm-6.text-center
+			//- img.img.img-responsive.img-circle(src='http://www.pngall.com/wp-content/uploads/2016/05/Man-Download-PNG.png')
+			i.icon-lg.fa.fa-quote-right
+			p.text-light.text-sm.offset-top-30 A empresa Toalhas Classe A é um distribuidora que atende o meu negócio há algum tempo e nunca deixo faltar em meu comércio. Pois os produtos são de alta qualidade e os meus clientes sempre acabam procurando por esse tipo de produto, além de ter um custo benefício muito bom tanto para mim quanto para meus clientes.
+			h3.text-sans Diego Costa
+			p.text-sans.text-sm Cliente
+
+br
+br 
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br
+br

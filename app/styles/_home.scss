@@ -1,0 +1,71 @@
+#carousel-home {
+	.carousel-inner {
+		.item {
+			height: 600px;
+
+			.cover {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(#000, .5);
+				text-align: center;
+				color: white;
+
+				h2 {
+					margin-top: 250px;
+					font-size: 50px;
+					@extend .text-cursive;
+				}
+
+				p {
+					font-size: 25px;
+					max-width: 800px;
+					margin: 30px auto;
+					@extend .text-sans;
+				}
+			}
+
+			.picture {
+				width: 100%;
+				height: 100%;
+				display: inline-block;
+				background-size: cover;
+				background-position: center;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
+
+.parallax-container {
+	width: 100%;
+	height: 500px;
+	position: relative;
+
+	> div[name='parallax'] {
+		width: 100%;
+		height: 100%;
+	}
+
+	.cover {				
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: rgba(#000, .5);
+		padding: 70px;
+
+		p {
+			max-width: 1024px;
+			margin: 0 auto;
+		}
+	}
+}
+
+.testimonials {
+	img {
+		max-width: 300px;
+		margin: 0 auto;
+	}
+}
