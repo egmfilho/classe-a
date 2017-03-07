@@ -1,0 +1,46 @@
+.page-header(style='background-image: url("https://wallpaperscraft.com/image/phone_office_desk_80045_1920x1080.jpg")')
+	.cover
+	.container
+		.row
+			.col-xs-12
+				h1.text-white.text-xlg Contato
+
+.container
+	.row.offset-bottom-60
+		.col-sm-8.col-sm-offset-2.col-md-6.col-md-offset-3
+			form.row(name='formContact' action='/php/jurema.php')
+				.col-xs-12
+					h2.text-lg.text-center.text-sans.offset-top-60 Mensagem
+					p.text-light.text-sm.text-center.offset-bottom-60
+						| A nossa equipe está sempre a sua disposição, para esclarecer qualquer dúvida. 
+						| Para falar com nossa equipe, preencha o formulário abaixo corretamente e envie para nós. Em breve entraremos em contato.
+
+					h4 Nome
+					input.form-control(name='name' required ng-model='name')
+					.row
+						.col-xs-12.col-sm-6
+							h4 Email
+							input.form-control(name='email' type='email' ng-model='mail' ng-required='!tel')
+							h4(ng-show='formContact.email.$error.invalid') Sinforoso
+						.col-xs-12.col-sm-6
+							h4 Telefone
+							input.form-control(name='telephone' type='text' ng-model='tel' ng-required='!mail' minlength='10' maxlength='11' number-only)
+					h4 Mensagem
+					textarea.form-control(rows='8' name='message' required ng-model='msg')
+				.col-xs-12.col-sm-push-8.col-sm-4
+					button.btn.btn-primary.btn-lg.btn-block.offset-top-30(type='submit' ng-disabled="!formContact.$valid")
+						i.fa.fa-send
+						|  Enviar
+
+	.row
+		.col-xs-12
+			h2.text-lg.text-sans.text-center.offset-top-60 Estamos aqui
+
+ng-map.offset-top-30(default-style="true" center='-22.415787,-42.971796' zoom='15' scrollwheel='false')
+	marker(id='#marker' position='-22.415787,-42.971796' on-click='contact.map.showInfoWindow("#info-window")')
+	info-window(id='#info-window' visible-on-marker='#marker')
+		div(ng-non-bindable='')
+			h4 ClasseA 
+			p Estrada Diógenes Pedro da Costa, 520 
+			p Vargem Grande - Teresópos - RJ
+			p Tel: (21) 2741-1284

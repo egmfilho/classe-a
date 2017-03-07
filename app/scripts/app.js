@@ -8,10 +8,16 @@ angular.module('classe_a', [
 		'ngSanitize',
 		'ngTouch',
 		'classe_a.controllers',
-		'ngParallax'
+		'egmfilho.inputFilters',
+		'ngParallax',
+		'ngMap'
 	])
 	.config(['$locationProvider', function($locationProvider) {
 		$locationProvider.hashPrefix('');
+		$locationProvider.html5Mode({
+			enabled: true,
+			requireBase: false
+		});
 	}])
 	.config(['$routeProvider', function($routeProvider) {
 
@@ -27,6 +33,16 @@ angular.module('classe_a', [
 				templateUrl: 'views/about.html',
 				controller: 'AboutCtrl',
 				controllerAs: 'about'
+			})
+			.when('/produtos', {
+				name: 'produtos',
+				templateUrl: 'views/products.html'
+			})
+			.when('/contato', {
+				name: 'contato',
+				templateUrl: 'views/contact.html',
+				controller: 'ContactCtrl',
+				controllerAs: 'contact'
 			})
 			.otherwise({
 				redirectTo: '/'
@@ -60,14 +76,9 @@ angular.module('classe_a', [
 			jQuery(header).find('ul.nav li[name="' + current.name + '"]').addClass('active');
 		});
 
-		angular.element($window).bind("scroll", function(e) {
-			var navbar = jQuery('nav.navbar.navbar-default');
-
-			if ($window.scrollY >= 1) {
-				navbar.addClass('navbar-opaque');
-			} else {
-				navbar.removeClass('navbar-opaque');
-			}
-		});
+		$window.onscroll = function() {
+			$rootScope.scrollY = $window.scrollY;
+			$rootScope.$apply();
+		};
 
 	}]);
