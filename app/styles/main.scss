@@ -1,7 +1,9 @@
 $main-color: #404290;
 
+$main-color-darker: darken($main-color, 13.5%);
 $main-color-dark: darken($main-color, 10%);
 $main-color-light: lighten($main-color, 10%);
+$main-color-lighter: lighten($main-color, 18%);
 
 $brand-primary: $main-color;
 
@@ -21,43 +23,91 @@ $brand-primary: $main-color;
 }
 
 nav.navbar {
-	height: 80px;
+	
+	@media(min-width: 768px) {
+		height: 80px;
+	}
+
 	background-color: $main-color-light;
 	border-radius: 0;
 	border: none;	
 
 	@include transition(background-color .2s, height .5s);
 
-	.navbar-header {
+	.navbar-header {		
 		.navbar-brand {
-			width: auto;
-			height: 100%;
+			float: none;
+			margin: 0 auto;			
 			padding: 0;
+			width: 120px;
+			position: absolute;
+			left: 0;
+			right: 0;
+			z-index: 100;
 
 			img.img-responsive {
-				width: 170px;
-				margin-top: -12px;
-				@include transition(margin .5s);
+				width: 120px;
+				margin-top: -3px;				
+				@include transition(margin .5s);				
+			}			
+		}
+		
+		@media(min-width: 768px) {			
+			.navbar-brand {
+				width: auto;
+				height: 100%;
+				margin: 0;
+				position: initial;				
+
+				img.img-responsive {
+					width: 170px;
+					margin-top: -12px;				
+				}
+			}
+		}
+
+		.navbar-toggle {
+			border-color: $main-color-lighter;
+
+			&:hover, &:focus {
+				background-color: $main-color-dark;
+			}
+
+			.icon-bar {
+				background-color: white;
 			}
 		}
 	}
 
 	.navbar-collapse {
+		border-color: transparent;
+		box-shadow: none;		
+
+		padding-top: 25px;
+		background-color: $main-color;
+		@media(min-width: 768px) {			
+			padding-top: 0;
+			background-color: transparent;
+		}
+
 		ul.navbar-nav {
 			margin-top: 15px;
-			@include transition(margin .5s);
+			@include transition(margin .5s);			
 			
 			li {
 				a {
 					font-family: 'Open Sans', sans-serif;
 					color: white;
 					font-size: 16px;
-					border-radius: 30px;
+					
+					@media(min-width: 768px) {
+						border-radius: 30px;
+					}
 
 					@include transition(background-color .25s);
 
 					&:hover {
-						background-color: $main-color;						
+						background-color: $main-color;
 						color: white;
 					}
 
@@ -67,8 +117,11 @@ nav.navbar {
 				}
 
 				&.active {
-					a {
-						background-color: $main-color;
+					a {						
+						background-color: $main-color-darker;
+						@media(min-width: 768px) {
+							background-color: $main-color;
+						}
 					}					
 				}
 			}
@@ -76,27 +129,33 @@ nav.navbar {
 	}
 
 	&.navbar-translucid {
-		background-color: transparent;
-		height: 120px;
+		@media(min-width: 768px) {
+			background-color: transparent;
+			height: 120px;
 
-		.navbar-header .navbar-brand img.img-responsive {
-			margin-top: 0;
-		}
+			.navbar-header .navbar-brand img.img-responsive {
+				margin-top: 0;
+			}
 
-		.navbar-collapse ul.navbar-nav {
-			margin-top: 35px;
+			.navbar-collapse ul.navbar-nav {
+				margin-top: 35px;
+			}
 		}
 	}
 }
 
 .page-header {
 	width: 100%;
-	height: 250px;
-	margin-top: 80px;
+	height: 250px;	
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+	margin-top: 50px;
+
+	@media(min-width: 768px) {
+		margin-top: 80px;
+	}
 
 	.cover {
 		position: absolute;
@@ -115,17 +174,33 @@ nav.navbar {
 	}
 }
 
+.fill-icon {
+	color: $main-color-darker;
+	background-color: $gray-lighter;
+	border-radius: 50%;
+	padding: 50px;
+	width: 180px;
+	height: 180px;
+}
+
+.warning-input {
+	border-color: red;
+}
+
 .footer {
 	width: 100%;
-	height: 100px;
+	min-height: 100px;
+	height: auto;
 	background-color: $main-color-dark;
 	font-weight: 200;
 
 	a {
 		color: white;
+		display: block;		
 
 		img.img-responsive {
 			width: 100px;
+			margin: 0 auto;
 			margin-top: 15px;
 		}
 	}

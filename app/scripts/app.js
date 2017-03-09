@@ -81,4 +81,9 @@ angular.module('classe_a', [
 			$rootScope.$apply();
 		};
 
+		// Esconde o navbar collapse ao clicar em um link
+		jQuery('.navbar-header .navbar-brand, #navbar-classeA a').on('click', function() {
+			jQuery('.navbar-toggle').click();
+		});
+
 	}]);

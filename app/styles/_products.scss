@@ -1,8 +1,12 @@
 .product {
-	img.image-responsive {
-		max-width: 250px;
+	.picture {
+		width: 250px;
+		height: 250px;
 		display: block;
 		margin: 0 auto;
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center; 
 	}
 
 	p {
