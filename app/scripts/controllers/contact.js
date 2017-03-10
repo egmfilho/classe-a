@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('classe_a.controllers')
-	.controller('ContactCtrl', ['$http', 'NgMap', function($http, NgMap) {
+	.controller('ContactCtrl', ['$http', '$httpParamSerializerJQLike', 'NgMap', function($http, $httpParamSerializerJQLike, NgMap) {
 
 		var self = this;
 
@@ -51,12 +51,12 @@ angular.module('classe_a.controllers')
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
 				},
-				data: {
+				data: $httpParamSerializerJQLike({
 					name: this.name,
 					email: this.email,
 					telephone: this.tel,
 					message: this.msg
-				}
+				})
 			}).then(function(success) {
 				alert('Mensagem enviada!');
 			}, function(error) {
