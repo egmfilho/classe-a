@@ -9,7 +9,7 @@ angular.module('classe_a', [
 		'ngTouch',
 		'classe_a.controllers',
 		'egmfilho.inputFilters',
-		'ngParallax',
+		'duParallax',
 		'ngMap'
 	])
 	.config(['$locationProvider', function($locationProvider) {
@@ -82,8 +82,10 @@ angular.module('classe_a', [
 		};
 
 		// Esconde o navbar collapse ao clicar em um link
-		jQuery('.navbar-header .navbar-brand, #navbar-classeA a').on('click', function() {
-			jQuery('.navbar-toggle').click();
+		jQuery('.navbar-header .navbar-brand, #navbar-collapse a').on('click', function() {
+			if ($window.innerWidth < 768) {
+				jQuery('.navbar-toggle').click();
+			}
 		});
 
 	}]);

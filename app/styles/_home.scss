@@ -82,11 +82,12 @@
 	width: 100%;
 	height: 500px;
 	position: relative;
+	overflow: hidden;
 
-	> div[name='parallax'] {
-		width: 100%;
-		height: 100%;
-	}
+	// > img[name='parallax'] {
+	// 	width: 100%;
+	// 	height: 100%;
+	// }
 
 	.cover {				
 		width: 100%;

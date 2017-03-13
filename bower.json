@@ -23,9 +23,9 @@
     "angular-touch": "^1.6.2",
     "font-awesome": "^4.7.0",
     "angular-i18n": "^1.6.2",
-    "ng-simple-parallax": "*",
     "ngmap": "^1.17.8",
-    "egmfilho-input-filters": "https://github.com/egmfilho/input-filters.git"
+    "egmfilho-input-filters": "https://github.com/egmfilho/input-filters.git",
+    "ng-parallax": "^0.1.8"
   },
   "overrides": {
     "angular-i18n": {

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('classe_a.controllers')
-	.controller('HomeCtrl', [function() {
+	.controller('HomeCtrl', ['parallaxHelper', function(parallaxHelper) {
 
 		this.slides = [{
 			title: 'Descubra-se, Reinvente-se!',
@@ -17,6 +17,8 @@ angular.module('classe_a.controllers')
 			title: 'Desenvolvido com alta qualidade',
 			subtitle: 'Elaborado com fontes seguras e renováveis.',
 			imageUrl: '../images/slides/slide3.jpg'
-		}]
+		}];
+
+		this.background = parallaxHelper.createAnimator(-0.5);
 
 	}]);
