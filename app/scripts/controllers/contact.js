@@ -31,6 +31,11 @@ angular.module('classe_a.controllers')
 				}
 			}
 
+			if (!self.city) {
+				jQuery('input[ng-model="contact.city"]').addClass('warning-input');
+				isValid = false;
+			}
+
 			if (!self.msg) {
 				jQuery('textarea[ng-model="contact.msg"]').addClass('warning-input');
 				isValid = false;
@@ -55,6 +60,7 @@ angular.module('classe_a.controllers')
 					name: this.name,
 					email: this.email,
 					telephone: this.tel,
+					city: this.city,
 					message: this.msg
 				})
 			}).then(function(success) {
