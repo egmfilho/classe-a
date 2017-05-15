@@ -1,5 +1,5 @@
 .page-header(style='background-image: url("../images/banner-contact.jpg")')
-	.cover
+	//.cover
 	.container
 		.row
 			.col-xs-12
@@ -37,7 +37,7 @@
 		.col-xs-12
 			h2.text-lg.text-sans.text-center.offset-top-60 Estamos aqui
 
-ng-map.offset-top-30(default-style="true" center='-22.3742449,-42.8686624' zoom='15' scrollwheel='false')
+ng-map.offset-top-30(default-style="true" center='-22.3742449,-42.8686624' zoom='10' scrollwheel='false')
 	marker(id='#marker' position='-22.3742449,-42.8686624' on-click='contact.map.showInfoWindow("#info-window")')
 	info-window(id='#info-window' visible-on-marker='#marker')
 		div(ng-non-bindable='')

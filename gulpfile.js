@@ -110,6 +110,12 @@ gulp.task('copy-videos', function() {
 		.pipe(connect.reload());
 });
 
+gulp.task('copy-files', function() {
+	return gulp.src(source + '**/*.{php,ico,htaccess}')
+		.pipe(gulp.dest(dest))
+		.pipe(connect.reload());
+});
+
 gulp.task('watch', function() {
 	gulp.watch([source + '*.pug'], ['index']);
 	gulp.watch([source + 'views/*.pug'], ['compile-views']);
@@ -122,9 +128,10 @@ gulp.task('watch', function() {
 	gulp.watch([source + 'images/**/*.*'], ['copy-images']);
 	gulp.watch([source + 'fonts/**/*.*'], ['copy-fonts']);
 	gulp.watch([source + 'videos/**/*.*'], ['copy-videos']);
+	gulp.watch([source + '**/*.*'], ['copy-files']);
 });
 
 gulp.task('default', ['connect', 'watch']);
 
-gulp.task('build', ['index', 'compile-views', 'compile-sass', 'app-bundle', 'copy-images', 'vendor-bundle', 'css', 'copy-fonts', 'copy-videos']);
+gulp.task('build', ['index', 'compile-views', 'compile-sass', 'app-bundle', 'copy-images', 'vendor-bundle', 'css', 'copy-fonts', 'copy-videos', 'copy-files' ]);
 

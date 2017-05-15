@@ -6,10 +6,36 @@
 		margin: 0 auto;
 		background-size: contain;
 		background-repeat: no-repeat;
-		background-position: center; 
+		background-position: center;
+		cursor: pointer;
 	}
 
 	p {
 		margin: 0;
+
+		a{
+			font-weight: bold;
+			
+			span{
+				margin-right: 4px;
+			}
+		}
+	}
+}
+
+.modal-dialog {
+	.lightbox-nav{
+		.btn-group{
+			a{
+				color: #FFF;
+				background-color: $main-color;
+			}
+		}
+	}
+	.lightbox-image-container{
+		.lightbox-image-caption{
+			bottom: 0;
+			top: inherit;
+		}
 	}
 }

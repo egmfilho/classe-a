@@ -19,33 +19,16 @@
 		.col-xs-12
 			h2.text-center.text-lg.offset-bottom-30 Papel Interfolha
 
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/interfolhas/eco.png")
-				.picture(style='background-image: url("../images/products/interfolhas/eco.png")')
-			p.text-center.offset-top-15 ECO 20x21 c/ 1.000
+		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat='item in product.papel track by $index')
+			a(ng-click="openLightboxModal(product.papel,$index)")
+				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+			p.text-center.offset-top-15
+				a(target="_blank" ng-href="download.php?image={{item.url}}")
+					span.glyphicon.glyphicon-download
+					| Baixar Imagem
+			p.text-center {{item.caption}}
 			p.text-center
-				b cód. 7898642600015
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/interfolhas/branco-plus.png")
-				.picture(style='background-image: url("../images/products/interfolhas/branco-plus.png")')
-			p.text-center.offset-top-15 Branco Plus 20x21 c/ 1.000
-			p.text-center
-				b cód. 7898642600022
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/interfolhas/premium.png")
-				.picture(style='background-image: url("../images/products/interfolhas/premium.png")')
-			p.text-center.offset-top-15 Premium 20x21 c/ 1.000
-			p.text-center
-				b cód. 7898642600046
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/interfolhas/premium-plus.png")
-				.picture(style='background-image: url("../images/products/interfolhas/premium-plus.png")')
-			p.text-center.offset-top-15 Premium Plus 20x21 c/ 1.000
-			p.text-center
-				b cód. 7898642600060
+				b {{item.cod}}
 
 	.row
 		.col-xs-12
@@ -55,33 +38,16 @@
 		.col-xs-12
 			h2.text-center.text-lg.offset-bottom-30 Papel Higiênico Institucional
 
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/higienico/eco.png")
-				.picture(style='background-image: url("../images/products/higienico/eco.png")')
-			p.text-center.offset-top-15 ECO 300 8x150m
+		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.higienico track by $index")
+			a(ng-click="openLightboxModal(product.higienico,$index)")
+				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+			p.text-center.offset-top-15
+				a(target="_blank" ng-href="download.php?image={{item.url}}")
+					span.glyphicon.glyphicon-download
+					| Baixar Imagem
+			p.text-center {{item.caption}}
 			p.text-center
-				b cód. 7898642600107
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/higienico/branco-plus.png")
-				.picture(style='background-image: url("../images/products/higienico/branco-plus.png")')
-			p.text-center.offset-top-15 Branco Plus 8x300m
-			p.text-center
-				b cód. 7898642600114
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/higienico/premium.png")
-				.picture(style='background-image: url("../images/products/higienico/premium.png")')
-			p.text-center.offset-top-15 Premium 8x300m
-			p.text-center
-				b cód. 7898642600138
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/higienico/premium-plus.png")
-				.picture(style='background-image: url("../images/products/higienico/premium-plus.png")')
-			p.text-center.offset-top-15 Premium Plus 8x300m
-			p.text-center
-				b cód. 7898642600152
+				b {{item.cod}}
 
 	.row
 		.col-xs-12
@@ -91,52 +57,15 @@
 		.col-xs-12
 			h2.text-center.text-lg.offset-bottom-30 Papel em Caixa
 
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/caixa/interfolha.png")
-				.picture(style='background-image: url("../images/products/caixa/interfolha.png")')
-			h4.text-center.offset-top-15.offset-bottom-15 Papel Interfolha
-			p.text-center Luxo 20x21 c/ 2.000
-			p.text-center
-				b cód. 7898642600084
-			p.text-center.offset-top-15 100% Celulose 20x21 c/ 2.000
-			p.text-center
-				b cód. 7898642600091
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/caixa/higienico.png")
-				.picture(style='background-image: url("../images/products/caixa/higienico.png")')
-			h4.text-center.offset-top-15.offset-bottom-15 Papel Higiênico Institucional
-			p.text-center Branco Plus 8x300m
-			p.text-center
-				b cód. 7898642600121
-			p.text-center.offset-top-15 Premium 8x300m
-			p.text-center
-				b cód. 7898642600145
-			p.text-center.offset-top-15 Premium Plus 8x300m
-			p.text-center
-				b cód. 7898642600169
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/caixa/bobina.png")
-				.picture(style='background-image: url("../images/products/caixa/bobina.png")')
-			h4.text-center.offset-top-15.offset-bottom-15 Toalha de Papel em Bobina
-			p.text-center Branco Plus 6x200m
-			p.text-center
-				b cód. 7898642600190
-			p.text-center.offset-top-15 Premium 6x200m
-			p.text-center
-				b cód. 7898642600206
-			p.text-center.offset-top-15 Premium Plus 6x200m
-			p.text-center
-				b cód. 7898642600213
-
-		.col-xs-12.col-sm-6.col-md-3.product
-			a(target="_blank" href="../images/products/caixa/hospitalar.png")
-				.picture(style='background-image: url("../images/products/caixa/hospitalar.png")')
-			h4.text-center.offset-top-15.offset-bottom-15 Lençol Hospitalar
-			p.text-center Branco Extra Luxo 10x50m
-			p.text-center
-				b cód. 7898642600176
-			p.text-center.offset-top-15 100% Celulose 10x50m
-			p.text-center
-				b cód. 7898642600183
+		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.caixa track by $index")
+			a(ng-click="openLightboxModal(product.caixa,$index)")
+				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+			p.text-center.offset-top-15
+				a(target="_blank" href="download.php?image={{item.url}}")
+					span.glyphicon.glyphicon-download
+					| Baixar Imagem
+			h4.text-center.offset-bottom-15 {{item.caption}}
+			.items(ng-repeat='i in item.items')
+				p.text-center {{i.title}}
+				p.text-center.offset-bottom-15
+					b cód. {{i.cod}}

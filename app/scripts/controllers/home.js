@@ -1,17 +1,15 @@
 'use strict';
 
 angular.module('classe_a.controllers')
-	.controller('HomeCtrl', ['parallaxHelper', function(parallaxHelper) {
+	.controller('HomeCtrl', ['$scope', 'parallaxHelper', function($scope, parallaxHelper) {
 
 		this.slides = [{
 			title: 'Descubra-se, Reinvente-se!',
 			subtitle: 'Papel Toalha Interfolha.',
-			// imageUrl: 'http://fullhdpictures.com/wp-content/uploads/2017/01/Nature-Wallpaper-Free.jpg'
 			imageUrl: '../images/slides/slide1.jpg'
 		}, {
 			title: 'Produtos singulares',
 			subtitle: 'O melhor custo respeitando suas necessidades.',
-			// imageUrl: 'http://fullhdpictures.com/wp-content/uploads/2016/11/Full-HD-Prairie-Wallpaper.jpg'
 			imageUrl: '../images/slides/slide2.jpg'
 		}, {
 			title: 'Desenvolvido com alta qualidade',
@@ -20,5 +18,13 @@ angular.module('classe_a.controllers')
 		}];
 
 		this.background = parallaxHelper.createAnimator(-0.5);
+
+		$scope.$on( '$viewContentLoaded', function(){
+
+			jQuery('#carousel-home').carousel({
+				pause: false
+			});
+
+		});
 
 	}]);

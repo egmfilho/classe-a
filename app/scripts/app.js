@@ -10,7 +10,8 @@ angular.module('classe_a', [
 		'classe_a.controllers',
 		'egmfilho.inputFilters',
 		'duParallax',
-		'ngMap'
+		'ngMap',
+		'bootstrapLightbox'
 	])
 	.config(['$locationProvider', function($locationProvider) {
 		$locationProvider.hashPrefix('');
@@ -36,7 +37,9 @@ angular.module('classe_a', [
 			})
 			.when('/produtos', {
 				name: 'produtos',
-				templateUrl: 'views/products.html'
+				templateUrl: 'views/products.html',
+				controller: 'ProductCtrl',
+				controllerAs: 'product'
 			})
 			.when('/contato', {
 				name: 'contato',
