@@ -51,6 +51,13 @@ angular.module('classe_a', [
 	}])
 	.run(['$rootScope', '$location', '$window', function($rootScope, $location, $window) {
 		
+		$rootScope.loading = {
+			count: 0,
+			isLoading: function() { return this.count > 0 },
+			load: function() { this.count++; },
+			unload: function() { this.count--; this.count < 0 ? this.count = 0 : null; }
+		};
+
 		$rootScope.getNumber = function(num) {
 			return new Array(Math.max(0, Math.ceil(num)));
 		};

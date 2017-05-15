@@ -14,34 +14,47 @@
 					p.text-light.text-sm.text-center.offset-bottom-60
 						| A nossa equipe está sempre a sua disposição, para esclarecer qualquer dúvida. 
 						| Para falar com nossa equipe, preencha o formulário abaixo corretamente e envie para nós. Em breve entraremos em contato.
-
-					h4 Nome
-					input.form-control(ng-model='contact.name')
-					.row
-						.col-xs-12.col-sm-6
-							h4 Email
-							input.form-control(type='email' ng-model='contact.email')
-						.col-xs-12.col-sm-6
-							h4 Telefone
-							input.form-control(type='text' ng-model='contact.tel' minlength='10' maxlength='11' number-only)
-					h4 Cidade
-					input.form-control(ng-model='contact.city')
-					h4 Mensagem
-					textarea.form-control(rows='8' ng-model='contact.msg')
-				.col-xs-12.col-sm-push-8.col-sm-4
-					button.btn.btn-primary.btn-lg.btn-block.offset-top-30(ng-click='contact.sendMessage()')
-						i.fa.fa-send
-						|  Enviar
+					form(method="post" ng-submit="contact.sendMessage($event)")
+						h4 Nome
+						input.form-control(ng-model='contact.name' required)
+						.row
+							.col-xs-12.col-sm-6
+								h4 Email
+								input.form-control(type='email' ng-model='contact.email' required)
+							.col-xs-12.col-sm-6
+								h4 Telefone
+								input.form-control(type='text' ng-model='contact.tel' minlength='10' maxlength='11' number-only required)
+						h4 Cidade
+						input.form-control(ng-model='contact.city')
+						h4 Mensagem
+						textarea.form-control(rows='8' ng-model='contact.msg' required)
+						.col-xs-12.col-sm-push-8.col-sm-4
+							button.btn.btn-primary.btn-lg.btn-block.offset-top-30
+								i.fa.fa-send
+								|  Enviar
 
 	.row
 		.col-xs-12
 			h2.text-lg.text-sans.text-center.offset-top-60 Estamos aqui
 
-ng-map.offset-top-30(default-style="true" center='-22.415787,-42.971796' zoom='15' scrollwheel='false')
-	marker(id='#marker' position='-22.415787,-42.971796' on-click='contact.map.showInfoWindow("#info-window")')
+ng-map.offset-top-30(default-style="true" center='-22.3742449,-42.8686624' zoom='15' scrollwheel='false')
+	marker(id='#marker' position='-22.3742449,-42.8686624' on-click='contact.map.showInfoWindow("#info-window")')
 	info-window(id='#info-window' visible-on-marker='#marker')
 		div(ng-non-bindable='')
 			h4 ClasseA 
-			p Estrada Diógenes Pedro da Costa, 520 
+			p Estrada Diógenes Pedro da Costa, 520
 			p Vargem Grande - Teresópos - RJ
 			p Tel: (21) 2741-1284
+			p Cel: (21) 97195-9514		
+
+#modal.modal.fade(role='dialog')
+	.modal-dialog(role='document')
+		.modal-content
+			.modal-header
+				button.close(type='button' data-dismiss='modal' aria-label='Fechar')
+					span(aria-hidden='true') &times;
+				h4.modal-title {{contact.modal.title}}
+			.modal-body
+				p {{contact.modal.message}}
+			.modal-footer
+				button.btn.btn-primary(type='button' data-dismiss='modal') Fechar

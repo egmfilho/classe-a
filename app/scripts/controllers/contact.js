@@ -1,57 +1,36 @@
 'use strict';
 
 angular.module('classe_a.controllers')
-	.controller('ContactCtrl', ['$http', '$httpParamSerializerJQLike', 'NgMap', function($http, $httpParamSerializerJQLike, NgMap) {
+	.controller('ContactCtrl', ['$rootScope', '$http', '$httpParamSerializerJQLike', 'NgMap', function($rootScope, $http, $httpParamSerializerJQLike, NgMap) {
 
 		var self = this;
+
+		this.modal = {
+			title: '',
+			message: ''
+		};
 
 		NgMap.getMap().then(function(map) {
 			self.map = map;
 		});
 
-		function validar() {
-			var isValid = true;
-
-			jQuery('input, textarea').removeClass('warning-input');
-			
-			if (!self.name) {
-				jQuery('input[ng-model="contact.name"]').addClass('warning-input');
-				isValid = false;
-			}
-
-			if (!self.email && ! self.tel) {
-				if (!self.email) {
-					jQuery('input[ng-model="contact.email"]').addClass('warning-input');
-					isValid = false;
-				}
-
-				if (!self.tel) {
-					jQuery('input[ng-model="contact.tel"]').addClass('warning-input');
-					isValid = false;
-				}
-			}
-
-			if (!self.city) {
-				jQuery('input[ng-model="contact.city"]').addClass('warning-input');
-				isValid = false;
-			}
-
-			if (!self.msg) {
-				jQuery('textarea[ng-model="contact.msg"]').addClass('warning-input');
-				isValid = false;
-			}
-
-			return isValid;
+		this.limpar = function(){
+			self.name = '';
+			self.email = '';
+			self.tel = '';
+			self.city = '';
+			self.msg = '';
 		}
 
-		this.sendMessage = function() {
-			if (!validar()) {
-				alert('Preencha corretamente todos os campos!');
-				return;
-			}
+		this.sendMessage = function( $event ) {
+			
+			$event.stopPropagation();
+			$event.preventDefault();
+
+			$rootScope.loading.load();
 
 			$http({
-				url: '/contact.php',
+				url: 'contact.php',
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/x-www-form-urlencoded'
@@ -64,11 +43,19 @@ angular.module('classe_a.controllers')
 					message: this.msg
 				})
 			}).then(function(success) {
-				alert('Mensagem enviada!');
+				self.limpar();
+				self.modal.title = 'Tudo certo :)';
+				self.modal.message = 'TOALHAS CLASSE A agradece o seu contato. Retornaremos o mais breve possível.';
+				$rootScope.loading.unload();
+				jQuery('#modal').modal('show');
 			}, function(error) {
-				console.log(error);
-				alert('Não foi possível enviar a mensagem');
+				self.limpar();
+				self.modal.title = 'Ops!';
+				self.modal.message = 'Não foi possível enviar a sua mensagem! Tente novamente mais tarde.';
+				$rootScope.loading.unload();
+				jQuery('#modal').modal('show');
 			});
+
 		};
 
 	}]);
