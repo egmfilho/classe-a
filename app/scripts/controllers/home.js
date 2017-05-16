@@ -21,7 +21,7 @@ angular.module('classe_a.controllers')
 
 		$scope.$on( '$viewContentLoaded', function(){
 
-			jQuery('#carousel-home').carousel({
+			jQuery('#carousel').carousel({
 				pause: false
 			});
 

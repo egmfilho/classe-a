@@ -1,9 +1,29 @@
-.page-header(style='background-image: url("../images/banner-products.png")')
-	.cover
-	.container
-		.row
-			.col-xs-12
-				h1.text-white.text-xlg Produtos
+//- .page-header(style='background-image: url("../images/banner-products.png")')
+//- 	.cover
+//- 	.container
+//- 		.row
+//- 			.col-xs-12
+//- 				h1.text-white.text-xlg Produtos
+
+#carousel.carousel.slide(data-ride='carousel')
+	//- Indicators
+	ol.carousel-indicators
+		li(data-target='#carousel' data-slide-to='{{$index}}' ng-class='{"active": $index === 0}' ng-repeat='n in getNumber(3) track by $index')
+
+	//- Wrapper for Slides
+	.carousel-inner(role='listbox')
+		.item(ng-class='{"active": $index === 0}' ng-repeat='slide in product.slides track by $index')
+			.cover
+				div 
+					h2 {{slide.title}}
+					p {{slide.subtitle}}
+			.picture(ng-style='{"background-image": "url(" + slide.imageUrl + ")"}')
+
+	//- Controls
+	a.left.carousel-control(data-target='#carousel' role='button' data-slide='prev')
+		span.glyphicon.glyphicon-chevron-left
+	a.right.carousel-control(data-target='#carousel' role='button' data-slide='next')
+		span.glyphicon.glyphicon-chevron-right
 
 .container
 	.row.offset-top-30
@@ -12,6 +32,7 @@
 			.separator
 			p.text-center.text-sans.text-sm.text-light Produtos de alta tecnologia 100% celulose.
 
+			p.text-center.text-light.text-sm.offset-top-30
 			p.text-center.text-light.text-sm.offset-top-30
 				| As Toalhas Interfolha Classe A estão presente no mercado para oferecer aos seus clientes qualidade, praticidade e economia. Disponíveis em quatro tipos de papel de acordo com o perfil de cada cliente, sendo: 100% Celulose, Branco Luxo, Branco e Natural.
 
