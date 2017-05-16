@@ -143,6 +143,9 @@ nav.navbar {
 					right: auto;
 					border-top-left-radius: 0;
 					border-top-right-radius: 0;
+					border-bottom-left-radius: 15px;
+					border-bottom-right-radius: 15px;
+					background-color: $main-color;
 
 					@include transition(border-radius .25s);
 
@@ -150,10 +153,11 @@ nav.navbar {
 						> a {
 							font-family: 'Open Sans', sans-serif;
 							font-size: 16px;
-							color: $main-color;
+							// color: $main-color;
+							color: white;
 
 							&:hover {
-								background-color: $main-color;
+								background-color: $main-color-darker;
 								color: white;
 							}
 
@@ -180,8 +184,8 @@ nav.navbar {
 				margin-top: 35px;
 
 				> li ul.dropdown-menu {
-					border-top-left-radius: 4px;
-					border-top-right-radius: 4px;
+					border-top-left-radius: 15px;
+					border-top-right-radius: 15px;
 				}
 			}
 		}
