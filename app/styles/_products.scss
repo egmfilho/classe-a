@@ -8,6 +8,28 @@
 		background-repeat: no-repeat;
 		background-position: center;
 		cursor: pointer;
+		position: relative;
+
+		span{
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			margin: auto;
+			width: 44px;
+			height: 44px;
+			color: #FFF;
+			font-size: 56px;
+			transition: .3s all ease;
+			opacity: 0;
+		}
+
+		&:hover{
+			span{
+				opacity: 1;
+			}
+		}
 	}
 
 	p {

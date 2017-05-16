@@ -22,6 +22,7 @@
 		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat='item in product.papel track by $index')
 			a(ng-click="openLightboxModal(product.papel,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+					span.glyphicon.glyphicon-zoom-in
 			p.text-center.offset-top-15
 				a(target="_blank" ng-href="download.php?image={{item.url}}")
 					span.glyphicon.glyphicon-download
@@ -41,6 +42,7 @@
 		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.higienico track by $index")
 			a(ng-click="openLightboxModal(product.higienico,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+					span.glyphicon.glyphicon-zoom-in
 			p.text-center.offset-top-15
 				a(target="_blank" ng-href="download.php?image={{item.url}}")
 					span.glyphicon.glyphicon-download
@@ -60,6 +62,7 @@
 		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.caixa track by $index")
 			a(ng-click="openLightboxModal(product.caixa,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+					span.glyphicon.glyphicon-zoom-in
 			p.text-center.offset-top-15
 				a(target="_blank" href="download.php?image={{item.url}}")
 					span.glyphicon.glyphicon-download
