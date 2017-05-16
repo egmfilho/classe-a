@@ -22,6 +22,10 @@ $brand-primary: $main-color;
 	font-family: 'Open Sans', sans-serif;
 }
 
+.text-primary {
+	color: $main-color !important;
+}
+
 nav.navbar {
 	
 	@media(min-width: 768px) {
@@ -95,8 +99,8 @@ nav.navbar {
 			margin-top: 15px;
 			@include transition(margin-top .5s);
 			
-			li {
-				a {
+			> li {
+				> a {
 					font-family: 'Open Sans', sans-serif;
 					color: white;
 					font-size: 16px;
@@ -117,13 +121,47 @@ nav.navbar {
 					}
 				}
 
+				&.open > a{
+					&:hover, &:focus {
+						background-color: $main-color;
+						color: white;
+					}
+				}
+
 				&.active {
 					a {
 						background-color: $main-color-darker;
 						@media(min-width: 768px) {
 							background-color: $main-color;
 						}
-					}					
+					}
+				}
+
+				ul.dropdown-menu {
+					margin-top: 14px;
+					left: auto;
+					right: auto;
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+
+					@include transition(border-radius .25s);
+
+					> li {
+						> a {
+							font-family: 'Open Sans', sans-serif;
+							font-size: 16px;
+							color: $main-color;
+
+							&:hover {
+								background-color: $main-color;
+								color: white;
+							}
+
+							&:focus {
+								color: white;
+							}
+						}
+					}
 				}
 			}
 		}
@@ -140,6 +178,11 @@ nav.navbar {
 
 			.navbar-collapse ul.navbar-nav {
 				margin-top: 35px;
+
+				> li ul.dropdown-menu {
+					border-top-left-radius: 4px;
+					border-top-right-radius: 4px;
+				}
 			}
 		}
 	}

@@ -19,8 +19,20 @@ block header
 					li(name='about')
 						a(href='/sobre') Sobre
 					
-					li(name='produtos')
+					//- li(name='produtos')
 						a(href='/produtos') Produtos
+
+					li(name='dropdownProdutos')
+						a.dropdown-toggle(href='' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded=' false')
+							| Produtos&nbsp;
+							span.caret
+						ul.dropdown-menu
+							li
+								a(href='/produtos/#interfolha') Papel Interfolha
+							li
+								a(href='/produtos/#higienico') Papel Higiênico Institucional
+							li
+								a(href='/produtos/#caixa') Papel em Caixa
 					
 					li(name='contato')
 						a(href='/contato') Contato
