@@ -122,7 +122,9 @@ nav.navbar {
 				}
 
 				&.open > a{
-					&:hover, &:focus {
+					background-color: $main-color;
+
+					&:hover, &:focus, &:active {
 						background-color: $main-color;
 						color: white;
 					}
@@ -139,6 +141,7 @@ nav.navbar {
 
 				ul.dropdown-menu {
 					margin-top: 14px;
+					padding: 13px 0;
 					left: auto;
 					right: auto;
 					border-top-left-radius: 0;
