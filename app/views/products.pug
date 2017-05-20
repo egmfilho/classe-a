@@ -44,8 +44,8 @@
 		.col-xs-12
 			h2.text-center.text-lg.offset-bottom-30 Papel Interfolha
 
-		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat='item in product.papel track by $index')
-			a(ng-click="openLightboxModal(product.papel,$index)")
+		.col-xs-12.col-sm-6.col-md-3.product.offset-bottom-30(ng-repeat='item in product.interfolha track by $index')
+			a(ng-click="openLightboxModal(product.interfolha,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
 					span.glyphicon.glyphicon-zoom-in
 			p.text-center.offset-top-15
@@ -53,6 +53,9 @@
 					span.glyphicon.glyphicon-download
 					| Baixar Imagem
 			p.text-center {{item.caption}}
+			p.text-center {{item.medida}}
+			p.text-center {{item.embalagem}}
+			p.text-center {{item.especificacao}}
 			p.text-center
 				b {{item.cod}}
 
@@ -64,7 +67,7 @@
 		.col-xs-12
 			h2.text-center.text-lg.offset-bottom-30 Papel Higiênico Institucional
 
-		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.higienico track by $index")
+		.col-xs-12.col-sm-6.col-md-3.product.offset-bottom-30(ng-repeat="item in product.higienico track by $index")
 			a(ng-click="openLightboxModal(product.higienico,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
 					span.glyphicon.glyphicon-zoom-in
@@ -73,27 +76,54 @@
 					span.glyphicon.glyphicon-download
 					| Baixar Imagem
 			p.text-center {{item.caption}}
+			p.text-center {{item.medida}}
+			p.text-center {{item.embalagem}}
+			p.text-center {{item.especificacao}}
 			p.text-center
 				b {{item.cod}}
 
-	#caixa.row
+	#papel.row
 		.col-xs-12
 			.separator
 
 	.row.offset-top-60.offset-bottom-60
 		.col-xs-12
-			h2.text-center.text-lg.offset-bottom-30 Papel em Caixa
+			h2.text-center.text-lg.offset-bottom-30 Papel em Bobina
 
-		.col-xs-12.col-sm-6.col-md-3.product(ng-repeat="item in product.caixa track by $index")
-			a(ng-click="openLightboxModal(product.caixa,$index)")
+		.col-xs-12.col-sm-6.col-md-3.product.offset-bottom-30(ng-repeat="item in product.papel track by $index")
+			a(ng-click="openLightboxModal(product.papel,$index)")
+				.picture(ng-style="{'background-image':'url({{item.url}})'}")
+					span.glyphicon.glyphicon-zoom-in
+			p.text-center.offset-top-15
+				a(target="_blank" ng-href="download.php?image={{item.url}}")
+					span.glyphicon.glyphicon-download
+					| Baixar Imagem
+			p.text-center {{item.caption}}
+			p.text-center {{item.medida}}
+			p.text-center {{item.embalagem}}
+			p.text-center {{item.especificacao}}
+			p.text-center
+				b {{item.cod}}
+
+	#lencol.row
+		.col-xs-12
+			.separator
+
+	.row.offset-top-60.offset-bottom-60
+		.col-xs-12
+			h2.text-center.text-lg.offset-bottom-30 Lençol Hospitalar
+
+		.col-xs-12.col-sm-6.col-md-3.product.offset-bottom-30(ng-repeat="item in product.lencol track by $index")
+			a(ng-click="openLightboxModal(product.lencol,$index)")
 				.picture(ng-style="{'background-image':'url({{item.url}})'}")
 					span.glyphicon.glyphicon-zoom-in
 			p.text-center.offset-top-15
 				a(target="_blank" href="download.php?image={{item.url}}")
 					span.glyphicon.glyphicon-download
 					| Baixar Imagem
-			h4.text-center.offset-bottom-15 {{item.caption}}
-			.items(ng-repeat='i in item.items')
-				p.text-center {{i.title}}
-				p.text-center.offset-bottom-15
-					b cód. {{i.cod}}
+			p.text-center {{item.caption}}
+			p.text-center {{item.medida}}
+			p.text-center {{item.embalagem}}
+			p.text-center {{item.especificacao}}
+			p.text-center
+				b cód. {{i.cod}}

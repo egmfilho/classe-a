@@ -4,17 +4,17 @@ angular.module('classe_a.controllers')
 	.controller('ProductCtrl', ['$scope', 'parallaxHelper', 'Lightbox', function($scope, parallaxHelper, Lightbox) {
 
 	this.slides = [{
-		title: 'Descubra-se, Reinvente-se!',
-		subtitle: 'Papel Toalha Interfolha.',
-		imageUrl: '../images/slides/slide1.jpg'
+		title: 'Linha de Produtos',
+		subtitle: '',
+		imageUrl: '../images/slides/slide_produtos_01.jpg'
 	}, {
-		title: 'Produtos singulares',
-		subtitle: 'O melhor custo respeitando suas necessidades.',
-		imageUrl: '../images/slides/slide2.jpg'
+		title: 'Linha de Produtos',
+		subtitle: '',
+		imageUrl: '../images/slides/slide_produtos_02.jpg'
 	}, {
-		title: 'Desenvolvido com alta qualidade',
-		subtitle: 'Elaborado com fontes seguras e renováveis.',
-		imageUrl: '../images/slides/slide3.jpg'
+		title: 'Linha de Produtos',
+		subtitle: '',
+		imageUrl: '../images/slides/slide_produtos_03.jpg'
 	}];
 
 	this.background = parallaxHelper.createAnimator(-0.5);
@@ -29,101 +29,193 @@ angular.module('classe_a.controllers')
 
 	Lightbox.templateUrl = 'views/lightbox.html';
 
-	this.papel = [
+	this.interfolha = [
 		{
-			'url': 'images/products/interfolhas/eco.png',
-			'caption': 'ECO 20x21 c/ 1.000',
+			'url': 'images/products/interfolhas/eco-800F.png',
+			'caption': 'CLASSE A ECO',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 800 folhas',
+			'especificacao': '2 dobras. Folha Branca Simples',
 			'cod': '7898642600015'
-		},{
-			'url': 'images/products/interfolhas/branco-plus.png',
-			'caption': 'Branco Plus 20x21 c/ 1.000',
+		},
+		{
+			'url': 'images/products/interfolhas/branco-plus-1000F.png',
+			'caption': 'CLASSE A BRANCO PLUS',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 1000 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca III',
 			'cod': '7898642600022'
-		},{
-			'url': 'images/products/interfolhas/premium.png',
-			'caption': 'Premium 20x21 c/ 1.000',
+		},
+		{
+			'url': 'images/products/interfolhas/branco-800F.png',
+			'caption': 'CLASSE A BRANCO',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 800 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca II',
+			'cod': '7898642600220'
+		},
+		{
+			'url': 'images/products/interfolhas/premium-1000F.png',
+			'caption': 'CLASSE A PREMIUM',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 1000 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca II',
 			'cod': '7898642600046'
-		},{
-			'url': 'images/products/interfolhas/premium-plus.png',
-			'caption': 'Premium Plus 20x21 c/ 1.000',
+		},
+		{
+			'url': 'images/products/interfolhas/branco-luxo-800F.png',
+			'caption': 'CLASSE A BRANCO LUXO',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 800 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca I',
+			'cod': '7898642600237'
+		},
+		{
+			'url': 'images/products/interfolhas/premium-plus-1000F.png',
+			'caption': 'CLASSE A PREMIUM PLUS',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 1000 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca II',
 			'cod': '7898642600060'
+		},
+		{
+			'url': 'images/products/interfolhas/100-celulose-800F.png',
+			'caption': 'CLASSE A 100% CELULOSE',
+			'medida': '20x21cm',
+			'embalagem': 'Pacote c/ 800 folhas',
+			'especificacao': '2 dobras. Folha Simples 100% Celulose',
+			'cod': '7898642600244'
+		},
+		{
+			'url': 'images/products/interfolhas/interfolha.png',
+			'caption': 'CLASSE A BRANCO LUXO',
+			'medida': '20x21cm',
+			'embalagem': 'Caixa c/ 2000 folhas',
+			'especificacao': '2 dobras. Folha Simples Branca I',
+			'cod': '7898642600084'
+		},
+		{
+			'url': 'images/products/interfolhas/interfolha.png',
+			'caption': 'CLASSE A 100% CELULOSE',
+			'medida': '20x21cm',
+			'embalagem': 'Caixa c/ 2000 folhas',
+			'especificacao': '2 dobras. Folha Simples 100% Celulose',
+			'cod': '7898642600091'
 		}
 	];
 	
 	this.higienico = [
 		{
 			'url': 'images/products/higienico/eco.png',
-			'caption': 'ECO 300 8x150m',
+			'caption': 'ECO 300 FD 8X150',
+			'medida': '10cmx150m',
+			'embalagem': 'Fardo c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca II',
 			'cod': '7898642600107'
 		},{
 			'url': 'images/products/higienico/branco-plus.png',
-			'caption': 'Branco Plus 8x300m',
+			'caption': 'BRANCO PLUS',
+			'medida': '10cmx300m',
+			'embalagem': 'Fardo c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca II',
 			'cod': '7898642600114'
 		},{
 			'url': 'images/products/higienico/premium.png',
-			'caption': 'Premium 8x300m',
+			'caption': 'PREMIUM',
+			'medida': '10cmx300m',
+			'embalagem': 'Fardo c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca I',
 			'cod': '7898642600138'
 		},{
 			'url': 'images/products/higienico/premium-plus.png',
-			'caption': 'Premium Plus 8x300m',
+			'caption': 'PREMIUM PLUS',
+			'medida': '10cmx300m',
+			'embalagem': 'Fardo c/ 8 rolos',
+			'especificacao': 'Folha Simples 100% Celulose',
 			'cod': '7898642600152'
+		},{
+			'url': 'images/products/higienico/higienico.png',
+			'caption': 'BRANCO PLUS',
+			'medida': '10cmx300m',
+			'embalagem': 'Caixa c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca II',
+			'cod': '7898642600121'
+		},{
+			'url': 'images/products/higienico/higienico.png',
+			'caption': 'PREMIUM',
+			'medida': '10cmx300m',
+			'embalagem': 'Caixa c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca I',
+			'cod': '7898642600145'
+		},{
+			'url': 'images/products/higienico/higienico.png',
+			'caption': 'PREMIUM PLUS',
+			'medida': '10cmx300m',
+			'embalagem': 'Caixa c/ 8 rolos',
+			'especificacao': 'Folha Simples 100% Celulose',
+			'cod': '7898642600169'
 		}
 	];
 
-	this.caixa = [
+	this.papel = [
 		{
-			'url': 'images/products/caixa/interfolha.png',
-			'caption': 'Papel Interfolha',
-			'items':[
-				{
-					'title': 'Luxo 20x21 c/ 2.000',
-					'cod': '7898642600084'
-				},{
-					'title': '100% Celulose 20x21 c/ 2.000',
-					'cod': '7898642600091'
-				}
-			]
-		},{
-			'url': 'images/products/caixa/higienico.png',
-			'caption': 'Papel Higiênico Institucional',
-			'items':[
-				{
-					'title': 'Branco Plus 8x300m',
-					'cod': '7898642600121'
-				},{
-					'title': 'Premium 8x300m',
-					'cod': '7898642600145'
-				},{
-					'title': 'Premium Plus 8x300m',
-					'cod': '7898642600169'
-				}
-			]
-		},{
-			'url': 'images/products/caixa/bobina.png',
-			'caption': 'Toalha de Papel em Bobina',
-			'items':[
-				{
-					'title': 'Branco Plus 6x200m',
-					'cod': '7898642600190'
-				},{
-					'title': 'Premium 6x200m',
-					'cod': '7898642600206'
-				},{
-					'title': 'Premium Plus 6x200m',
-					'cod': '7898642600213'
-				}
-			]
-		},{
-			'url': 'images/products/caixa/hospitalar.png',
-			'caption': 'Lençol Hospitalar',
-			'items':[
-				{
-					'title': 'Branco Extra Luxo 10x50m',
-					'cod': '7898642600176'
-				},{
-					'title': '100% Celulose 10x50m',
-					'cod': '7898642600183'
-				}
-			]
+			'url': 'images/products/papel/bobina.png',
+			'caption': 'BRANCO PLUS',
+			'medida': '20cmx200m',
+			'embalagem': 'Caixa c/ 6 rolos',
+			'especificacao': 'Folha Simples Branca II',
+			'cod': '7898642600190'
+		},
+		{
+			'url': 'images/products/papel/bobina.png',
+			'caption': 'PREMIUM',
+			'medida': '20cmx200m',
+			'embalagem': 'Caixa c/ 6 rolos',
+			'especificacao': 'Folha Simples Branca I',
+			'cod': '7898642600206'
+		},
+		{
+			'url': 'images/products/papel/bobina.png',
+			'caption': 'PREMIUM PLUS',
+			'medida': '20cmx200m',
+			'embalagem': 'Caixa c/ 6 rolos',
+			'especificacao': 'Folha Simples 100% Celulose',
+			'cod': '7898642600213'
+		},
+		{
+			'url': 'images/products/papel/bobina.png',
+			'caption': 'BRANCO PLUS',
+			'medida': '20cmx100m',
+			'embalagem': 'Caixa c/ 8 rolos',
+			'especificacao': 'Folha Simples Branca II',
+			'cod': '7898642600268'
+		}
+	];
+
+	this.lencol = [
+		{
+			'url': 'images/products/lencol/hospitalar.png',
+			'caption': '100% CELULOSE',
+			'medida': '70cmx50m',
+			'embalagem': 'Caixa c/ 10 rolos',
+			'especificacao': 'Folha Simples 100% Celulose',
+			'cod': '7898642600183'
+		},
+		{
+			'url': 'images/products/lencol/hospitalar.png',
+			'caption': 'BRANCO EXTRA LUXO',
+			'medida': '70cmx50m',
+			'embalagem': 'Caixa c/ 10 rolos',
+			'especificacao': 'Folha Simples Branca I',
+			'cod': '7898642600176'
+		},
+		{
+			'url': 'images/products/lencol/hospitalar.png',
+			'caption': 'BRANCO PLUS',
+			'medida': '70cmx50m',
+			'embalagem': 'Caixa c/ 10 rolos',
+			'especificacao': 'Folha Simples Branca I',
+			'cod': '7898642600251'
 		}
 	];
 

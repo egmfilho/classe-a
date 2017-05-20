@@ -6,15 +6,15 @@ angular.module('classe_a.controllers')
 		this.slides = [{
 			title: 'Descubra-se, Reinvente-se!',
 			subtitle: 'Papel Toalha Interfolha.',
-			imageUrl: '../images/slides/slide1.jpg'
+			imageUrl: '../images/slides/slide_home_01.jpg'
 		}, {
 			title: 'Produtos singulares',
 			subtitle: 'O melhor custo respeitando suas necessidades.',
-			imageUrl: '../images/slides/slide2.jpg'
+			imageUrl: '../images/slides/slide_home_03.jpg'
 		}, {
 			title: 'Desenvolvido com alta qualidade',
 			subtitle: 'Elaborado com fontes seguras e renováveis.',
-			imageUrl: '../images/slides/slide3.jpg'
+			imageUrl: '../images/slides/slide_home_02.jpg'
 		}];
 
 		this.background = parallaxHelper.createAnimator(-0.5);
