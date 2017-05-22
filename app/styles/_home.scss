@@ -5,7 +5,7 @@
 	overflow: hidden;
 
 	> img[name='parallax'] {
-		max-width: 100%;
+		max-height: 100%;
 	}
 
 	.cover {				
@@ -32,5 +32,14 @@
 	img {
 		max-width: 300px;
 		margin: 0 auto;
+	}
+}
+
+@media(min-width: 768px) {
+	.parallax-container{
+		> img[name='parallax'] {
+			min-width: 100%;
+			min-height: 132%;
+		}
 	}
 }

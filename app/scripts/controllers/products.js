@@ -4,15 +4,15 @@ angular.module('classe_a.controllers')
 	.controller('ProductCtrl', ['$scope', 'parallaxHelper', 'Lightbox', function($scope, parallaxHelper, Lightbox) {
 
 	this.slides = [{
-		title: 'Linha de Produtos',
+		title: '',
 		subtitle: '',
 		imageUrl: '../images/slides/slide_produtos_01.jpg'
 	}, {
-		title: 'Linha de Produtos',
+		title: '',
 		subtitle: '',
 		imageUrl: '../images/slides/slide_produtos_02.jpg'
 	}, {
-		title: 'Linha de Produtos',
+		title: '',
 		subtitle: '',
 		imageUrl: '../images/slides/slide_produtos_03.jpg'
 	}];
