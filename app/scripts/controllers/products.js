@@ -214,7 +214,7 @@ angular.module('classe_a.controllers')
 			'caption': 'BRANCO PLUS',
 			'medida': '70cmx50m',
 			'embalagem': 'Caixa c/ 10 rolos',
-			'especificacao': 'Folha Simples Branca I',
+			'especificacao': 'Folha Simples Branca II',
 			'cod': '7898642600251'
 		}
 	];

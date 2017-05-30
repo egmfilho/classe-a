@@ -1,7 +1,7 @@
 #carousel.carousel.slide(data-ride='carousel')
 	//- Indicators
 	ol.carousel-indicators
-		li(data-target='#carousel' data-slide-to='{{$index}}' ng-class='{"active": $index === 0}' ng-repeat='n in getNumber(3) track by $index')
+		li(data-target='#carousel' data-slide-to='{{$index}}' ng-class='{"active": $index === 0}' ng-repeat='n in getNumber(2) track by $index')
 
 	//- Wrapper for Slides
 	.carousel-inner(role='listbox')

@@ -88,7 +88,7 @@
 
 	.row.offset-top-60.offset-bottom-60
 		.col-xs-12
-			h2.text-center.text-lg.offset-bottom-30 Papel em Bobina
+			h2.text-center.text-lg.offset-bottom-30 Papel Toalha em Bobina
 
 		.col-xs-12.col-sm-6.col-md-3.product.offset-bottom-30(ng-repeat="item in product.papel track by $index")
 			a(ng-click="openLightboxModal(product.papel,$index)")
@@ -126,4 +126,4 @@
 			p.text-center {{item.embalagem}}
 			p.text-center {{item.especificacao}}
 			p.text-center
-				b cód. {{i.cod}}
+				b cód. {{item.cod}}
